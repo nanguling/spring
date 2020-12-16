@@ -1,0 +1,5 @@
+package com.mystudy.service;
+
+public interface SomeService {
+    void doSome();
+}

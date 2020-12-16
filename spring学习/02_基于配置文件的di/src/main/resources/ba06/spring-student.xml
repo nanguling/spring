@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+        student模块所有bean的声明，
+    -->
+
+    <bean id="myStudent" class="com.mystudy.ba06.Student" autowire="byType">
+        <property name="name" value="派大星"/><!--setName("海绵宝宝")-->
+        <property name="age" value="25"/><!--setAge(20)-->
+        <!--引用类型的赋值-->
+        <!--<property name="school" ref="mySchool"/>&lt;!&ndash;setSchool(mySchool)g &ndash;&gt;-->
+    </bean>
+
+</beans>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/01_hello_spring/01_hello_spring.iml" filepath="$PROJECT_DIR$/01_hello_spring/01_hello_spring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/02_基于配置文件的di/02_基于配置文件的di.iml" filepath="$PROJECT_DIR$/02_基于配置文件的di/02_基于配置文件的di.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../MyBatis学习/03_homework/03_homework.iml" filepath="$PROJECT_DIR$/../MyBatis学习/03_homework/03_homework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/04_基于注解的di/04_jiyuzhujiededi.iml" filepath="$PROJECT_DIR$/04_基于注解的di/04_jiyuzhujiededi.iml" />
+    </modules>
+  </component>
+</project>
