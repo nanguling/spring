@@ -5,9 +5,9 @@ import org.springframework.stereotype.Component;
 
 @Component("myschool")
 public class School {
-    @Value("天才大学院")
+    @Value("${name}")
     private String name;
-    @Value("大成都")
+    @Value("${address}")
     private String address;
 
     public void setName(String name) {

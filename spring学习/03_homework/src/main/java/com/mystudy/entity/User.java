@@ -1,8 +1,15 @@
 package com.mystudy.entity;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component("myUser")
 public class User {
+    @Value("1")
     private Integer id;
+    @Value("海绵宝宝")
     private String name;
+    @Value("20")
     private Integer age;
 
     public User() {

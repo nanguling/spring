@@ -38,7 +38,7 @@
         <!--spring依赖-->
         <dependency>
             <groupId>org.springframework</groupId>
-            <artifactId>spring-context-support</artifactId>
+            <artifactId>spring-context</artifactId>
             <version>5.2.10.RELEASE</version>
         </dependency>
     </dependencies>

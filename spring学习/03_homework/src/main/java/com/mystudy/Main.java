@@ -13,11 +13,8 @@ public class Main {
         //2.读取配置文件,获得spring容器
         ApplicationContext context = new ClassPathXmlApplicationContext(config);
         //3.从容器中获取对象
-        UserService service = (UserService) context.getBean("userService");
-        User user = new User();
-        user.setId(1);
-        user.setName("sss");
-        user.setAge(15);
+        UserService service = (UserService) context.getBean("myService");
+        User user = (User) context.getBean("myUser");
         service.addUser(user);
     }
 }

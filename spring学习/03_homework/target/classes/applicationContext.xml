@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
-    <!--要使用哪个对象，就声明哪个对象-->
-    <!--创建dao实例-->
-    <bean name="dao" class="com.mystudy.dao.impl.UserDaoImpl"/>
+    <context:component-scan base-package="com.mystudy"/>
 
-    <!--创建UserServicesImpl的实例-->
-    <bean name="userService" class="com.mystudy.service.impl.UserServiceImpl">
-        <!--set注入，给UserServicesImpl的dao属性赋值-->
-        <property name="dao" ref="dao"/>
-    </bean>
 
 </beans>
