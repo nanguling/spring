@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--声明参数配置文件-->
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+
+    <!--声明数据源-->
+    <bean id="myDataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.un}"/>
+        <property name="password" value="${jdbc.pw}"/>
+        <property name="maxActive" value="${jdbc.max}"/>
+    </bean>
+
+    <!--声明SqlSessionFactory对象，使用SqlSessionFactoryBean类创建-->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!--通过set注入将数据源赋值给dataSource属性-->
+        <property name="dataSource" ref="myDataSource"/>
+        <!--声明mybatis主配置文件位置
+            configLocation属性是Resource类型的
+           它的赋值使用value，指定配置文件路径使用classpath：表示文件位置
+        -->
+        <property name="configLocation" value="classpath:mybatis.xml"/>
+    </bean>
+
+    <!--创建dao代理对象，使用MapperScannerConfigurer类在其内部创建-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!--指定SqlSessionFactory的id-->
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+        <!--指定dao接口所在的包，MapperScannerConfigurer会为该包下的所有接口执行getMapper()方法，创建出他们的代理对象-->
+        <property name="basePackage" value="com.mystudy.dao"/>
+    </bean>
+
+    <!--声明service对象-->
+    <context:component-scan base-package="com.mystudy.service.impl"/>
+</beans>
